@@ -1,4 +1,6 @@
-test test does this update
+# Coffeeshop App
+
+the client for this project can be found [here](https://github.com/9ucc1/coffeeshop-client)
 
 # Phase 3 Project Guidelines
 
