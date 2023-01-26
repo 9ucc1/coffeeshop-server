@@ -1,2 +1,7 @@
-# a customer can have many orders
-# a customer has many drinks, through orders
+# a customer has many drinks
+class Customer < ActiveRecord::Base
+    has_many :drinks
+end
+
+# attributes:
+# name: string
