@@ -20,8 +20,13 @@ class ApplicationController < Sinatra::Base
     shop = Shop.find(params[:id])
 
     shop.to_json(only: [:id, :name, :location], include: {
-      drinks: { only: [:name, :price]}  
+      drinks: { only: [:name, :decaf, :price, :ingredients, :description, :shop_id]}  
     })
+  end
+
+  get '/drinks' do
+    drinks = Drink.all.order(:shop_id)
+    drinks.to_json
   end
 
 end
