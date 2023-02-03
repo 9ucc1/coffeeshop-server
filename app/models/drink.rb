@@ -4,10 +4,8 @@ class Drink < ActiveRecord::Base
 end
 
 # name :string
-# ordered_at :timestamp
-# size: string
 # decaf :boolean
 # price :float
 # ingredients :???? array?
-# notes :string
+# description :string
 # shop_id :integer <<foreign key
