@@ -36,6 +36,18 @@ class ApplicationController < Sinatra::Base
     drinks.to_json
   end
 
+  post '/shops/:shop_id/drinks' do
+    drink = Drink.create(
+      name: params[:name],
+      decaf: params[:decaf],
+      price: params[:price],
+      ingredients: params[:ingredients],
+      description: params[:description],
+      shop_id: params[:shop_id]
+    )
+    drink.to_json
+  end
+
   #????
   delete '/shops/:shop_id/drinks/:id' do
     drink = Drink.find(params[:id])
