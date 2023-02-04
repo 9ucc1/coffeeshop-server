@@ -48,6 +48,13 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
+  post '/shops/new' do
+    shop = Shop.create(
+      name: params[:name]
+    )
+    shop.to_json
+  end
+
   #????
   delete '/shops/:shop_id/drinks/:id' do
     drink = Drink.find(params[:id])
