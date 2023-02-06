@@ -30,7 +30,6 @@ class ApplicationController < Sinatra::Base
     })
   end
 
-
   get '/drinks' do
     drinks = Drink.all.order(:shop_id)
     drinks.to_json
@@ -48,9 +47,20 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
-  post '/shops/new' do
+  post '/shops' do
     shop = Shop.create(
-      name: params[:name]
+      name: params[:name],
+      location: params[:location],
+      description: params[:description]
+    )
+    shop.to_json
+  end
+
+  patch '/shops/shop_id/edit' do
+    shop = Shop.find(params[:id])
+    shop.update(
+      location: params[:location],
+      description: params[:description]
     )
     shop.to_json
   end
