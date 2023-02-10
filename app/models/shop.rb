@@ -1,8 +1,12 @@
-# a customer has many drinks
 class Shop < ActiveRecord::Base
     has_many :drinks
+
+    #def initialize(name, location, description, drinks)
+    #    @name=name
+    #    @location=location
+    #    @description=description
+    #    @drinks=[]
+    #end
 end
 
-# attributes:
-# name: string
-# location: string
+# initialize shop with drinks empty array
