@@ -8,35 +8,17 @@ class ApplicationController < Sinatra::Base
 
   get '/shops' do
     shops = Shop.all.order(:name)
-    #.limit(10)
     shops.to_json(only: [:id, :name, :location, :description], include: {
       drinks: { only: [:id, :name, :decaf, :price, :ingredients, :description, :shop_id]}  
     })
-    #shops.to_json(only: [:id, :name, :location, :description])
   end
-
-#  get '/shops/:id' do
-#    shop = Shop.find(params[:id])
-
-#    shop.to_json(only: [:id, :name, :location], include: {
-#      drinks: { only: [:id, :name, :decaf, :price, :ingredients, #:description, :shop_id]}  
-#    })
-#  end
-
-  #get '/shops/:shop_id/drinks' do
-    #shop = Shop.find(params[:id])
-    #shop.to_json(only: [:id, :name, :location], include: {
-    #  drinks: { only: [:id, :name, :decaf, :price, :ingredients, #:description, :shop_id]}  
-    #})
-  #  shop.to_json(only: [:id, :name, :location])
-  #end
 
   get '/drinks' do
     drinks = Drink.all.order(:shop_id)
     drinks.to_json
   end
 
-  post '/shops/:shop_id/drinks' do
+  post '/drinks' do
     drink = Drink.create(
       name: params[:name],
       decaf: params[:decaf],
@@ -54,16 +36,17 @@ class ApplicationController < Sinatra::Base
       location: params[:location],
       description: params[:description],
     )
-    shop.to_json
+    shop.to_json(:include => :drinks) #shorthand
   end
 
   patch '/shops/:id' do
     shop = Shop.find(params[:id])
     shop.update(
+      name: params[:name],
       location: params[:location],
       description: params[:description]
     )
-    shop.to_json
+    shop.to_json(:include => :drinks)
   end
 
   delete '/shops/:id' do
@@ -72,7 +55,12 @@ class ApplicationController < Sinatra::Base
     shop.to_json
   end
 
-  delete '/shops/:shop_id/drinks/:id' do
+  #delete '/shops/:shop_id/drinks/:id' do
+  #  drink = Drink.find(params[:id])
+  #  drink.destroy
+  #  drink.to_json
+  #end
+  delete '/drinks/:id' do
     drink = Drink.find(params[:id])
     drink.destroy
     drink.to_json
