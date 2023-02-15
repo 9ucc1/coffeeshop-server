@@ -7,8 +7,8 @@ class ApplicationController < Sinatra::Base
 
   get '/shops' do
     shops = Shop.all.order(:name)
-    shops.to_json(only: [:id, :name, :location, :description], include: {
-      drinks: { only: [:id, :name, :decaf, :price, :ingredients, :description, :shop_id]}  
+    shops.to_json(only: [:id, :name, :location, :description, :image], include: {
+      drinks: { only: [:id, :name, :image, :decaf, :price, :ingredients, :description, :shop_id]}  
     })
   end
 
@@ -37,7 +37,8 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       ingredients: params[:ingredients],
       description: params[:description],
-      shop_id: params[:shop_id]
+      shop_id: params[:shop_id],
+      image: params[:image]
     )
     drink.to_json
   end
@@ -53,6 +54,7 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       location: params[:location],
       description: params[:description],
+      image: params[:image]
     )
     shop.to_json(:include => :drinks) #shorthand
   end
@@ -62,7 +64,8 @@ class ApplicationController < Sinatra::Base
     shop.update(
       name: params[:name],
       location: params[:location],
-      description: params[:description]
+      description: params[:description],
+      image: params[:image]
     )
     shop.to_json(:include => :drinks)
   end

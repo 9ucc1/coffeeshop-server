@@ -5,33 +5,31 @@ puts "🌱 Seeding coffees and shops..."
 Shop.create([
   {
     name: "Chapelure",
-    location: "900 Hagadorn Rd",
+    location: "4750 Hagadorn Road Suite 10, East Lansing, MI 48823",
     id: 1,
-    description: "breadcrumbs"
+    description: "Chapelure works hard to provide the Greater Lansing area with freshly baked cakes and pastries, as well as a wide variety of coffee and tea drinks.",
+    image: "https://images.squarespace-cdn.com/content/v1/5cdb201aa9ab954590e37790/1557864658637-DM3JMD6SEADM1DB8DBFU/chapLOGO.png?format=1500w"
   },
   {
     name: "Strange Matter Coffee",
-    location: "123 Apple Ln",
+    location: "2010 E Michigan Ave #103, Lansing, MI 48912",
     id: 2,
-    description: "og"
+    description: "A multi-roaster pour-over and espresso bar. Providing the finest coffees through our commitment to knowledge, skill, and service.",
+    image: "https://ksr-ugc.imgix.net/assets/000/952/514/20b597bea61d4b39c7886c78dee9c086_original.jpg?ixlib=rb-2.1.0&w=680&fit=max&v=1380058010&auto=format&gif-q=50&q=92&s=38a728ca0b04d5b9c00063c2d592f5bf"
   },
   {
     name: "Hudson Hill",
-    location: "456 Pearl Ave",
+    location: "619 E 13th Ave, Denver, Colorado 80203",
     id: 3,
-    description: "bougie"
-  },
-  {
-    name: "Lab Cafe",
-    location: "100 Liberty St",
-    id: 4,
-    description: "college town"
+    description: "The finest coffee, cocktails, wine, beer and spirits in Denver's Capitol Hill neighborhood.",
+    image: "https://images.squarespace-cdn.com/content/v1/5fe27a95bf08431341694f0c/1610742611075-7NPFVZ1AZREFDMRG8VWX/Untitled-1-01.png?format=1500w"
   },
   {
     name: "Roos Roast",
-    location: "123 st",
-    id: 5,
-    description: "we roast our own beans"
+    location: "117 E Liberty St, Ann Arbor, MI 48104",
+    id: 4,
+    description: "Home of Lobster Butter Love, breakfast food, and the best coffee in Ann Arbor. We roast daily on Michigan's first eco-roaster and we handprint our coffee bags, like maniacs.",
+    image: "https://cdn.shopify.com/s/files/1/1461/7372/files/Round_logo_blue_coffee-01_360x.png?v=1603375215"
   }
 ])
 
@@ -41,8 +39,9 @@ Drink.create([
     shop_id: 1,
     decaf: false,
     price: 4.50,
-    ingredients: "orange syrup, espresso, frothed milk",
-    description: "An interesting combination of flavors idk"
+    ingredients: "orange syrup, espresso, frothed milk, orange zest, whipped cream",
+    description: "An flavorful combination of zesty orange and rich chocolate, reminiscent of the holidays.",
+    image: "https://www.cakenknife.com/wp-content/uploads/2016/12/Hot-Orange-Mocha-Cocktail-Photo.jpg"
   },
   {
     name: "Chai Latte",
@@ -50,15 +49,17 @@ Drink.create([
     decaf: false,
     price: 4.50,
     ingredients: "black tea, spices, hot water, frothed milk, honey",
-    description: "a classic choice that isn't coffee"
+    description: "This chai latte is the perfect mug of fresh brewed black tea, warming spices, a hint of sweetness, and extra frothy milk.",
+    image: "https://blog.tableandvine.com/wp-content/uploads/2020/11/SpicedChaiLatte.jpg"
   },
   {
     name: "Hot Chocolate",
     shop_id: 1,
     decaf: true,
     price: 4.50,
-    ingredients: "orange syrup, espresso, frothed milk",
-    description: "cozy up with a hot chocolate"
+    ingredients: "frothed milk, cocoa powder",
+    description: "A classic cold weather drink, perfect for a snowy night in.",
+    image: "http://nourishedkitchen.com/wp-content/uploads/2016/12/IMG_2182.jpg"
   },
   {
     name: "NOLA Iced Coffee",
