@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       ingredients: params[:ingredients],
       description: params[:description],
+      image: params[:image],
       shop_id: params[:shop_id]
     )
     drink.to_json

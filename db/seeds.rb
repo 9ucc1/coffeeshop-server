@@ -22,7 +22,7 @@ Shop.create([
     location: "619 E 13th Ave, Denver, Colorado 80203",
     id: 3,
     description: "The finest coffee, cocktails, wine, beer and spirits in Denver's Capitol Hill neighborhood.",
-    image: "https://images.squarespace-cdn.com/content/v1/5fe27a95bf08431341694f0c/1610742611075-7NPFVZ1AZREFDMRG8VWX/Untitled-1-01.png?format=1500w"
+    image: "https://tse1.mm.bing.net/th?id=OIP.UOm_5suLHcQ3EUjJsKHPagAAAA&pid=Api"
   },
   {
     name: "Roos Roast",
