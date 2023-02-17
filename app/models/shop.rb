@@ -1,12 +1,4 @@
 class Shop < ActiveRecord::Base
-    has_many :drinks
+    has_many :drinks, dependent: :destroy
 
-    #def initialize(name, location, description, drinks)
-    #    @name=name
-    #    @location=location
-    #    @description=description
-    #    @drinks=[]
-    #end
 end
-
-# initialize shop with drinks empty array
